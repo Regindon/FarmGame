@@ -10,6 +10,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../R6_mechanic/Assets/PlayerMovement.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/MouseLook.cs" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectId" id="1mFYaSkPaA4LTIOflRUMOG7ojOS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -51,8 +62,16 @@
       <updated>1609090874504</updated>
       <workItem from="1609090874505" duration="2000" />
       <workItem from="1609091139395" duration="8000" />
+      <workItem from="1609856809837" duration="632000" />
+      <workItem from="1609864747406" duration="1375000" />
+      <workItem from="1609866321517" duration="421000" />
+      <workItem from="1609866759318" duration="1463000" />
+      <workItem from="1609868686260" duration="158000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />

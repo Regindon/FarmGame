@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -6945424456410717632, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6820931456028040969, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -682,6 +686,10 @@ PrefabInstance:
     - target: {fileID: -3005768751423920761, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -2796512401381000015, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2221341836222319993, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
@@ -835,6 +843,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6877957175768372784, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6934079111944331479, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -842,6 +854,10 @@ PrefabInstance:
     - target: {fileID: 7243489995493036908, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Name
       value: Giris_Kapisi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7397267151959863488, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7469762623114666968, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_LocalPosition.x

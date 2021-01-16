@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
@@ -22,9 +23,13 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool playerInBarn = false;
     private bool playerInHorse = false;
+    private bool toMarket = false;
+    private bool toMainScene = false;
     private float milk = 0;
     private float horseRent = 0;
     private float sheepWool = 0;
+    public Text marketText;
+    public Text mainSceneText;
     
         
     void Start()
@@ -93,6 +98,16 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+        if (Input.GetKeyDown(KeyCode.E) && toMarket==true)
+        {
+            //load market scene
+            SceneManager.LoadScene(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.E)&& toMainScene==true)
+        {
+            SceneManager.LoadScene(0);
+        }
+        
 
 
     }
@@ -102,19 +117,16 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("toMarketPlace"))
         {
             //activate text
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //load market scene
-            }
+            marketText.enabled = true;
+            toMarket = true;
+
         }
 
         if (other.CompareTag("toMainScene"))
         {
             //activate text
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                //load main scene
-            }
+            mainSceneText.enabled = true;
+            toMainScene = true;
         }
         if (other.CompareTag("InBarn"))
         {
@@ -131,11 +143,15 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("toMarketPlace"))
         {
             //disable mainscene text
+            marketText.enabled = false;
+            toMarket = false;
         }
 
         if (other.CompareTag("toMainScene"))
         {
             //disable market text
+            mainSceneText.enabled = false;
+            toMainScene = false;
         }
 
         if (other.CompareTag("InBarn"))

@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 12f;
     private Vector3 velocity;
     public Camera cam;
-    //public GameObject rappleText;
+    
     public Transform groundCheck;
     public float groundDisctance = 0.4f;
     public LayerMask groundMask;
@@ -25,11 +25,19 @@ public class PlayerMovement : MonoBehaviour
     private bool playerInHorse = false;
     private bool toMarket = false;
     private bool toMainScene = false;
-    private float milk = 0;
-    private float horseRent = 0;
-    private float sheepWool = 0;
+    private float milk;
+    private float horseRent;
+    private float sheepWool;
+    private float playerMoney;
     public Text marketText;
     public Text mainSceneText;
+    public Text milkText;
+    public Text horseRentText;
+    public Text woolText;
+    public Text canMilkText;
+    public Text canRentText;
+    public Text canWoolText;
+    public Text money;
     
         
     void Start()
@@ -68,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 //check if player have more then 1 milk
                 //activate text
+                canMilkText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     //get milk
@@ -75,27 +84,41 @@ public class PlayerMovement : MonoBehaviour
 
                 }
             }
+            else
+            {
+                canMilkText.enabled = false;
+            }
 
             if (hit.collider.tag == "Horse" && playerInHorse == true && horseRent<3)
             {
                 //check if player rent a horse before
                 //activate text
+                canRentText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     //rent horse
                     horseRent += 1;
                 }
             }
+            else
+            {
+                canRentText.enabled = false;
+            }
 
             if (hit.collider.tag=="Sheep" && playerInBarn==true && sheepWool <1)
             {
                 //check if player sheared wool before
                 //activate text
+                canWoolText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.R))
                 {
                     //shear sheep
                     sheepWool += 1;
                 }
+            }
+            else
+            {
+                canWoolText.enabled = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && toMarket==true)
@@ -107,7 +130,13 @@ public class PlayerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        
+
+        milkText.text = milk.ToString();
+        horseRentText.text = horseRent.ToString();
+        woolText.text = sheepWool.ToString();
+        money.text = (playerMoney.ToString() + "$");
+
+
 
 
     }

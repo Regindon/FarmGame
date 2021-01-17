@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Configuration;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,11 +26,14 @@ public class PlayerMovement : MonoBehaviour
     private bool playerInHorse = false;
     private bool toMarket = false;
     private bool toMainScene = false;
-    private bool playerInFence;
+    private bool playerInFence = false;
+    private bool playerInMarket = false;
     private float milk;
     private float horseRent;
     private float sheepWool;
     private float playerMoney;
+    private float marketSell;
+    
     private float repairFence;
     public Text marketText;
     public Text mainSceneText;
@@ -40,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public Text canRentText;
     public Text canWoolText;
     public Text money;
+    public Text marketSellText;
     public GameObject horseBrown;
     public GameObject horseBrown1;
     public GameObject horseBrown2;
@@ -106,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
                     //rent horse
                     horseRent += 1;
                     horseBrown.SetActive(false);
+                    playerMoney += 1;
                     StartCoroutine(Respawn(horseBrown));
 
                 }
@@ -133,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
                     //rent horse
                     horseRent += 1;
                     horseBrown1.SetActive(false);
+                    playerMoney += 1;
                     StartCoroutine(Respawn1(horseBrown1));
                     
                 }
@@ -159,6 +166,7 @@ public class PlayerMovement : MonoBehaviour
                     //rent horse
                     horseRent += 1;
                     horseBrown2.SetActive(false);
+                    playerMoney += 1;
                     StartCoroutine(Respawn2(horseBrown2));
                     
                 }
@@ -174,30 +182,18 @@ public class PlayerMovement : MonoBehaviour
                 horseBrown2.SetActive(true);
                 Instantiate(horseBrown2);
             }
-            if (hit.collider.tag == "Fence" && playerInFence == true && repairFence<3)
-            {
-                //check if player rent a horse before
-                //activate text
-                canRentText.enabled = true;
-                if (Input.GetKeyDown(KeyCode.R))
-                {
-                    //rent horse
-                    horseRent += 1;
-                    fence.SetActive(true);
-
-                }
-            }
-            else
+            
             {
                 canRentText.enabled = false;
             }
-            StartCoroutine(DestroyFence(fence));
-            IEnumerator DestroyFence(GameObject fence)
+            //StartCoroutine(DestroyFence(fence));
+            //IEnumerator DestroyFence(GameObject fence)
             {
-                
-                yield return new WaitForSeconds(2);
-                fence.SetActive(false);
-                Instantiate(fence);
+                //Destroy fence at the beginning of the game
+                //yield return new WaitForSeconds(2);
+                //fence.SetActive(false);
+                //Instantiate(fence);
+                //şimdilik commaladım çünkü hata veriyor
             }
             
 
@@ -215,6 +211,19 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 canWoolText.enabled = false;
+            }
+            if (hit.collider.tag=="Market" && playerInMarket==true)
+            {
+                marketSellText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //sell milk
+                    playerMoney += 1;
+                }
+            }
+            else
+            {
+                marketSellText.enabled = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && toMarket==true)
@@ -262,10 +271,13 @@ public class PlayerMovement : MonoBehaviour
             playerInHorse = true;
         }
 
-        if (other.CompareTag("Fence"))
+        if (other.CompareTag("InMarketPlace"))
         {
-            gameObject.SetActive(true);
+            marketSellText.enabled = true;
+            playerInMarket = true;
         }
+
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -292,6 +304,11 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("InHorseArea"))
         {
             playerInHorse = false;
+        }
+        if (other.CompareTag("InMarketPlace"))
+        {
+            marketSellText.enabled = false;
+            playerInMarket = false;
         }
     }
 }

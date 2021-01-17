@@ -14,6 +14,8 @@ TagManager:
   - Horse1
   - Horse2
   - Fence
+  - Market
+  - InMarketPlace
   layers:
   - Default
   - TransparentFX

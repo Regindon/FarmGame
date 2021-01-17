@@ -531,6 +531,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -8182019470971910714, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: -8005895827819101901, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -846,6 +850,14 @@ PrefabInstance:
     - target: {fileID: 7469762623114666968, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.316716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696709824790129207, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7696709824790129207, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_TagString
+      value: Fence
       objectReference: {fileID: 0}
     - target: {fileID: 8346986832670688545, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2643,6 +2655,37 @@ Transform:
   m_Father: {fileID: 1590561310}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352087708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7696709824790129207, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+  m_PrefabInstance: {fileID: 56882736}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &352087710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352087708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f763cf6f8133446529cc3c0b3288841e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horseBrown: {fileID: 352087708}
+--- !u!65 &352087711
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352087708}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.5365143, y: 3.1675901, z: 2.1851044}
+  m_Center: {x: 2.2682571, y: 1.0837951, z: -0.5925522}
 --- !u!1 &357557341
 GameObject:
   m_ObjectHideFlags: 0
@@ -4080,7 +4123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1847083141549040, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
       propertyPath: m_TagString
-      value: Horse
+      value: Horse2
       objectReference: {fileID: 0}
     - target: {fileID: 4303067238997750, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4134,6 +4177,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b4ce964c839b4b749b26fe82a22aea50, type: 2}
+    - target: {fileID: 95659398919577886, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114425080544000304, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
     - {fileID: 114389504973745632, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
@@ -4300,6 +4347,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7278628, y: 2.627462, z: 2.4687717}
   m_Center: {x: 0.030146252, y: 1.3192503, z: 0.161129}
+--- !u!114 &546739768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546739765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f763cf6f8133446529cc3c0b3288841e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horseBrown: {fileID: 546739765}
 --- !u!1 &555758881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6233804811899113390, guid: 95304942206124c44b2c0630e82f917b, type: 3}
@@ -4390,6 +4450,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: b4ce964c839b4b749b26fe82a22aea50, type: 2}
+    - target: {fileID: 95659398919577886, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 143460972871814582, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5508,7 +5572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1847083141549040, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
       propertyPath: m_TagString
-      value: Horse
+      value: Horse1
       objectReference: {fileID: 0}
     - target: {fileID: 4303067238997750, guid: 3e862f40cc8ad65468baa9837635c9c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9682,6 +9746,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7278628, y: 2.6274617, z: 2.5958178}
   m_Center: {x: 0.030145286, y: 1.3192502, z: 0.15536535}
+--- !u!114 &1310854100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310854097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f763cf6f8133446529cc3c0b3288841e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horseBrown: {fileID: 1310854097}
 --- !u!1 &1313181276
 GameObject:
   m_ObjectHideFlags: 0
@@ -13077,7 +13154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812490844}
   m_Layer: 0
-  m_Name: Aniamls
+  m_Name: Animals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15139,6 +15216,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7278628, y: 2.627462, z: 2.5177772}
   m_Center: {x: 0.030148098, y: 1.3192503, z: 0.13894099}
+--- !u!114 &2107452893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107452890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f763cf6f8133446529cc3c0b3288841e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horseBrown: {fileID: 2107452890}
 --- !u!1 &2112078596
 GameObject:
   m_ObjectHideFlags: 0
@@ -19638,6 +19728,34 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 496223028}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseDestroy
+      value: 
+      objectReference: {fileID: 2107452890}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseDestroy1
+      value: 
+      objectReference: {fileID: 1310854097}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseDestroy2
+      value: 
+      objectReference: {fileID: 546739765}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseBrown
+      value: 
+      objectReference: {fileID: 2107452890}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseBrown1
+      value: 
+      objectReference: {fileID: 1310854097}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: horseBrown2
+      value: 
+      objectReference: {fileID: 546739765}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: fence
+      value: 
+      objectReference: {fileID: 352087708}
     - target: {fileID: 6155776176922013325, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
       propertyPath: m_Name
       value: Fps Player

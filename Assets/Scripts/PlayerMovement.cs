@@ -25,10 +25,12 @@ public class PlayerMovement : MonoBehaviour
     private bool playerInHorse = false;
     private bool toMarket = false;
     private bool toMainScene = false;
+    private bool playerInFence;
     private float milk;
     private float horseRent;
     private float sheepWool;
     private float playerMoney;
+    private float repairFence;
     public Text marketText;
     public Text mainSceneText;
     public Text milkText;
@@ -38,11 +40,16 @@ public class PlayerMovement : MonoBehaviour
     public Text canRentText;
     public Text canWoolText;
     public Text money;
+    public GameObject horseBrown;
+    public GameObject horseBrown1;
+    public GameObject horseBrown2;
+    public GameObject fence;
     
         
     void Start()
     {
         cam = Camera.main;
+        
     }
 
     // Update is called once per frame
@@ -98,12 +105,101 @@ public class PlayerMovement : MonoBehaviour
                 {
                     //rent horse
                     horseRent += 1;
+                    horseBrown.SetActive(false);
+                    StartCoroutine(Respawn(horseBrown));
+
                 }
             }
             else
             {
                 canRentText.enabled = false;
             }
+
+            IEnumerator Respawn(GameObject horseBrown)
+            {
+                yield return new WaitForSeconds(60);
+                horseBrown.SetActive(true);
+                Instantiate(horseBrown);
+            }
+            
+            
+            if (hit.collider.tag == "Horse1" && playerInHorse == true && horseRent<3)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRentText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    //rent horse
+                    horseRent += 1;
+                    horseBrown1.SetActive(false);
+                    StartCoroutine(Respawn1(horseBrown1));
+                    
+                }
+            }
+            else
+            {
+                canRentText.enabled = false;
+            }
+            
+            IEnumerator Respawn1(GameObject horseBrown1)
+            {
+                yield return new WaitForSeconds(60);
+                horseBrown1.SetActive(true);
+                Instantiate(horseBrown1);
+            }
+            
+            if (hit.collider.tag == "Horse2" && playerInHorse == true && horseRent<3)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRentText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    //rent horse
+                    horseRent += 1;
+                    horseBrown2.SetActive(false);
+                    StartCoroutine(Respawn2(horseBrown2));
+                    
+                }
+            }
+            else
+            {
+                canRentText.enabled = false;
+            }
+            
+            IEnumerator Respawn2(GameObject horseBrown2)
+            {
+                yield return new WaitForSeconds(60);
+                horseBrown2.SetActive(true);
+                Instantiate(horseBrown2);
+            }
+            if (hit.collider.tag == "Fence" && playerInFence == true && repairFence<3)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRentText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    //rent horse
+                    horseRent += 1;
+                    fence.SetActive(true);
+
+                }
+            }
+            else
+            {
+                canRentText.enabled = false;
+            }
+            StartCoroutine(DestroyFence(fence));
+            IEnumerator DestroyFence(GameObject fence)
+            {
+                
+                yield return new WaitForSeconds(2);
+                fence.SetActive(false);
+                Instantiate(fence);
+            }
+            
 
             if (hit.collider.tag=="Sheep" && playerInBarn==true && sheepWool <1)
             {
@@ -164,6 +260,11 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("InHorseArea"))
         {
             playerInHorse = true;
+        }
+
+        if (other.CompareTag("Fence"))
+        {
+            gameObject.SetActive(true);
         }
     }
 

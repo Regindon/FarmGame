@@ -11,6 +11,9 @@ TagManager:
   - Sheep
   - InBarn
   - InHorseArea
+  - Horse1
+  - Horse2
+  - Fence
   layers:
   - Default
   - TransparentFX

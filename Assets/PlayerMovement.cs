@@ -28,12 +28,12 @@ public class PlayerMovement : MonoBehaviour
     private bool toMainScene = false;
     private bool playerInFence = false;
     private bool playerInMarket = false;
-    private float milk;
-    private float horseRent;
-    private float sheepWool;
-    private float playerMoney;
-    private float marketSell;
-    private float marketSellWool;
+    public float milk;
+    public float horseRent;
+    public float sheepWool;
+    public float playerMoney;
+    public float marketSell;
+    public float marketSellWool;
     
     private float repairFence;
     public Text marketText;
@@ -51,10 +51,16 @@ public class PlayerMovement : MonoBehaviour
     public GameObject horseBrown1;
     public GameObject horseBrown2;
     public GameObject fence;
+
+
     
-        
+
     void Start()
     {
+        playerMoney = PlayerPrefs.GetFloat("Money", playerMoney);
+        milk = PlayerPrefs.GetFloat("Milk", milk);
+        horseRent = PlayerPrefs.GetFloat("Rent", horseRent);
+        sheepWool = PlayerPrefs.GetFloat("Wool", sheepWool);
         cam = Camera.main;
         
     }
@@ -62,11 +68,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(playerInBarn +" barn");
-        Debug.Log(milk+ " milk");
-        Debug.Log(sheepWool + " wool");
-        Debug.Log( playerInHorse + " horse area");
-        Debug.Log( horseRent + " horse rent");
+        //Debug.Log(playerInBarn +" barn");
+        //Debug.Log(milk+ " milk");
+        //Debug.Log(sheepWool + " wool");
+        //Debug.Log( playerInHorse + " horse area");
+        //Debug.Log( horseRent + " horse rent");
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDisctance, groundMask);
         if (isGrounded && velocity.y < 0)
         {
@@ -95,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     //get milk
                     milk += 1;
+                    PlayerPrefs.SetFloat("Milk", milk);
+                    
 
                 }
             }
@@ -114,13 +122,30 @@ public class PlayerMovement : MonoBehaviour
                     horseRent += 1;
                     horseBrown.SetActive(false);
                     playerMoney += 1;
+                    PlayerPrefs.SetFloat("Rent", horseRent);
+                    PlayerPrefs.SetFloat("Money", playerMoney);
                     StartCoroutine(Respawn(horseBrown));
 
                 }
             }
             else
             {
-                canRentText.enabled = false;
+                if (hit.collider.tag == "Horse1" || hit.collider.tag == "Horse2" || hit.collider.tag == "Horse")
+                {
+                    if (playerInHorse == true)
+                    {
+                        canRentText.enabled = true;
+                    }
+                    if (horseRent >= 3)
+                    {
+                        canRentText.enabled = false;
+                    }
+                    
+                }
+                else
+                {
+                    canRentText.enabled = false;
+                }
             }
 
             IEnumerator Respawn(GameObject horseBrown)
@@ -142,13 +167,32 @@ public class PlayerMovement : MonoBehaviour
                     horseRent += 1;
                     horseBrown1.SetActive(false);
                     playerMoney += 1;
+                    PlayerPrefs.SetFloat("Rent", horseRent);
+                    PlayerPrefs.SetFloat("Money", playerMoney);
                     StartCoroutine(Respawn1(horseBrown1));
                     
                 }
             }
             else
             {
-                canRentText.enabled = false;
+                
+                if (hit.collider.tag == "Horse1" || hit.collider.tag == "Horse2" || hit.collider.tag == "Horse")
+                {
+                    if (playerInHorse == true)
+                    {
+                        canRentText.enabled = true;
+                    }
+                    if (horseRent >= 3)
+                    {
+                        canRentText.enabled = false;
+                    }
+                    
+                    
+                }
+                else
+                {
+                    canRentText.enabled = false;
+                }
             }
             
             IEnumerator Respawn1(GameObject horseBrown1)
@@ -169,13 +213,32 @@ public class PlayerMovement : MonoBehaviour
                     horseRent += 1;
                     horseBrown2.SetActive(false);
                     playerMoney += 1;
+                    PlayerPrefs.SetFloat("Rent", horseRent);
+                    PlayerPrefs.SetFloat("Money", playerMoney);
                     StartCoroutine(Respawn2(horseBrown2));
                     
                 }
             }
             else
             {
-                canRentText.enabled = false;
+                
+                if (hit.collider.tag == "Horse1" || hit.collider.tag == "Horse2" || hit.collider.tag == "Horse")
+                {
+                    if (playerInHorse == true)
+                    {
+                        canRentText.enabled = true;
+                    }
+                    if (horseRent >= 3)
+                    {
+                        canRentText.enabled = false;
+                    }
+                    
+                    
+                }
+                else
+                {
+                    canRentText.enabled = false;
+                }
             }
             
             IEnumerator Respawn2(GameObject horseBrown2)
@@ -185,9 +248,9 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(horseBrown2);
             }
             
-            {
+            /*{
                 canRentText.enabled = false;
-            }
+            }*/
             //StartCoroutine(DestroyFence(fence));
             //IEnumerator DestroyFence(GameObject fence)
             {
@@ -208,6 +271,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     //shear sheep
                     sheepWool += 1;
+                    PlayerPrefs.SetFloat("Wool", sheepWool);
+                    
                 }
             }
             else
@@ -249,6 +314,11 @@ public class PlayerMovement : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.E)&& toMainScene==true)
         {
             SceneManager.LoadScene(0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            PlayerPrefs.DeleteAll();
         }
 
         milkText.text = milk.ToString();

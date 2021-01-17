@@ -19756,6 +19756,14 @@ PrefabInstance:
       propertyPath: fence
       value: 
       objectReference: {fileID: 352087708}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: marketSellText
+      value: 
+      objectReference: {fileID: 7344140943627587910, guid: 74c3e8431667b5f409cde3bb79d0f6e9, type: 3}
+    - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
+      propertyPath: marketSellWoolText
+      value: 
+      objectReference: {fileID: 5659340061757637628, guid: 2f17e7533b8c48546a5c6cdb2afba630, type: 3}
     - target: {fileID: 6155776176922013325, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
       propertyPath: m_Name
       value: Fps Player

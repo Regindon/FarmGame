@@ -11,15 +11,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/HorseSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Clicker_game/Assets/Saving.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/MouseLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HorseSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -80,6 +80,8 @@
       <workItem from="1610884554076" duration="3651000" />
       <workItem from="1610889562025" duration="568000" />
       <workItem from="1610890351497" duration="1607000" />
+      <workItem from="1610902221687" duration="31000" />
+      <workItem from="1610902272217" duration="5751000" />
     </task>
     <servers />
   </component>
@@ -96,9 +98,9 @@
       <screen x="0" y="25" width="1440" height="797" />
     </state>
     <state x="385" y="250" key="#Notifications/0.25.1440.797@0.25.1440.797" timestamp="1610834606417" />
-    <state x="2397" y="-12" width="879" height="878" maximized="true" key="dock-window-1" timestamp="1610820923969">
+    <state x="2335" y="-19" width="1593" height="1027" maximized="true" key="dock-window-1" timestamp="1610903574401">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="2397" y="-12" width="879" height="878" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610820923969" />
+    <state x="2335" y="-19" width="1593" height="1027" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610903574401" />
   </component>
 </project>

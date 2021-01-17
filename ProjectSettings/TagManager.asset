@@ -17,6 +17,7 @@ TagManager:
   - Market
   - InMarketPlace
   - Market1
+  - Market3
   layers:
   - Default
   - TransparentFX

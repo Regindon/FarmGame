@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     public float playerMoney;
     public float marketSell;
     public float marketSellWool;
+    public float repair;
     
     private float repairFence;
     public Text marketText;
@@ -47,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
     public Text money;
     public Text marketSellText;
     public Text marketSellWoolText;
+    public Text repairToolkitAmountt;
+    public Text buyRepairText;
     public GameObject horseBrown;
     public GameObject horseBrown1;
     public GameObject horseBrown2;
@@ -61,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         milk = PlayerPrefs.GetFloat("Milk", milk);
         horseRent = PlayerPrefs.GetFloat("Rent", horseRent);
         sheepWool = PlayerPrefs.GetFloat("Wool", sheepWool);
+        repair = PlayerPrefs.GetFloat("Repair", repair);
         cam = Camera.main;
         
     }
@@ -212,7 +216,7 @@ public class PlayerMovement : MonoBehaviour
                     //rent horse
                     horseRent += 1;
                     horseBrown2.SetActive(false);
-                    playerMoney += 1;
+                    playerMoney += 10;
                     PlayerPrefs.SetFloat("Rent", horseRent);
                     PlayerPrefs.SetFloat("Money", playerMoney);
                     StartCoroutine(Respawn2(horseBrown2));
@@ -285,7 +289,14 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //sell milk
-                    playerMoney += 1;
+                    if (milk >= 1)
+                    {
+                        milk -= 1;
+                        playerMoney += 5;
+                        PlayerPrefs.SetFloat("Milk", milk);
+                        PlayerPrefs.SetFloat("Money", playerMoney);
+                    }
+                    
                 }
             }
             else
@@ -298,12 +309,41 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     //sell milk
-                    playerMoney += 1;
+                    if (sheepWool >= 1)
+                    {
+                        sheepWool -= 1;
+                        playerMoney += 15;
+                        PlayerPrefs.SetFloat("Wool", sheepWool);
+                        PlayerPrefs.SetFloat("Money", playerMoney);
+
+                    }
+                    
                 }
             }
             else
             {
                 marketSellWoolText.enabled = false;
+            }
+            if (hit.collider.tag=="Market3" && playerInMarket==true)
+            {
+                buyRepairText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //sell milk
+                    if (playerMoney >= 20)
+                    {
+                        repair += 1;
+                        playerMoney -= 20;
+                        PlayerPrefs.SetFloat("Repair", repair);
+                        PlayerPrefs.SetFloat("Money", playerMoney);
+
+                    }
+                    
+                }
+            }
+            else
+            {
+               buyRepairText.enabled = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && toMarket==true)
@@ -325,6 +365,7 @@ public class PlayerMovement : MonoBehaviour
         horseRentText.text = horseRent.ToString();
         woolText.text = sheepWool.ToString();
         money.text = (playerMoney.ToString() + "$");
+        repairToolkitAmountt.text = repair.ToString();
 
 
 

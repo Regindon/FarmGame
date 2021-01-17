@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
     private float sheepWool;
     private float playerMoney;
     private float marketSell;
+    private float marketSellWool;
     
     private float repairFence;
     public Text marketText;
@@ -45,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     public Text canWoolText;
     public Text money;
     public Text marketSellText;
+    public Text marketSellWoolText;
     public GameObject horseBrown;
     public GameObject horseBrown1;
     public GameObject horseBrown2;
@@ -224,6 +226,19 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 marketSellText.enabled = false;
+            }
+            if (hit.collider.tag=="Market1" && playerInMarket==true)
+            {
+                marketSellWoolText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //sell milk
+                    playerMoney += 1;
+                }
+            }
+            else
+            {
+                marketSellWoolText.enabled = false;
             }
         }
         if (Input.GetKeyDown(KeyCode.E) && toMarket==true)

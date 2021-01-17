@@ -16,6 +16,7 @@ TagManager:
   - Fence
   - Market
   - InMarketPlace
+  - Market1
   layers:
   - Default
   - TransparentFX

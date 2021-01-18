@@ -10,13 +10,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CountDownTimer.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/MouseLook.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HorseSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TimerCountdown.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/CountDownTimer.cs" />
+        <option value="$PROJECT_DIR$/Assets/RestartLevel.cs" />
       </list>
     </option>
   </component>
@@ -81,6 +87,9 @@
       <workItem from="1610902272217" duration="5751000" />
       <workItem from="1610912283263" duration="2490000" />
       <workItem from="1610927206941" duration="5013000" />
+      <workItem from="1610976540583" duration="2034000" />
+      <workItem from="1610984332017" duration="2374000" />
+      <workItem from="1610990092624" duration="2759000" />
     </task>
     <servers />
   </component>
@@ -101,5 +110,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2335" y="-19" width="1593" height="1027" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1610903574401" />
+    <state x="321" y="143" width="672" height="678" key="search.everywhere.popup" timestamp="1610986079494">
+      <screen x="0" y="25" width="1440" height="797" />
+    </state>
+    <state x="321" y="143" width="672" height="678" key="search.everywhere.popup/0.25.1440.797@0.25.1440.797" timestamp="1610986079494" />
   </component>
 </project>

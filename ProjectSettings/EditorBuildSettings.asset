@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MarketPlace.unity
     guid: 75d4fdc9069fd4708a0e973f87e9b28a
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: c85d51613b75246a7b0a93ab09a38b24
+  - enabled: 1
+    path: Assets/Scenes/FinishedGameScene.unity
+    guid: ff61fd66ab40f47fda90c6b292d91558
   m_configObjects: {}

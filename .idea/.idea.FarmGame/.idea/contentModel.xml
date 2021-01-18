@@ -47,8 +47,10 @@
             </e>
           </e>
         </e>
+        <e p="RestartLevel.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="AnimationStateController.cs" t="Include" />
+          <e p="CountDownTimer.cs" t="Include" />
           <e p="HorseSpawner.cs" t="Include" />
           <e p="MouseLook.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />

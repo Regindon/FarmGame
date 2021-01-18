@@ -61,6 +61,7 @@
      <Compile Include="Assets\polyperfect\Common\Common_RandomInt.cs" />
      <Compile Include="Assets\polyperfect\Low Poly Animated Animals\- Scripts\AnimalWanderManager.cs" />
      <Compile Include="Assets\polyperfect\Low Poly Animated Animals\- Scripts\Wander Script\Animal_SurfaceRotation.cs" />
+     <Compile Include="Assets\Scripts\CountDownTimer.cs" />
      <Compile Include="Assets\polyperfect\Common\Wander Script\Common_SurfaceRotation.cs" />
      <Compile Include="Assets\polyperfect\Common\Wander Script\IdleState.cs" />
      <Compile Include="Assets\polyperfect\Common\Common_AnimationControl.cs" />
@@ -76,6 +77,7 @@
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\polyperfect\Common\Common_AnimSpeed.cs" />
      <Compile Include="Assets\Scripts\HorseSpawner.cs" />
+     <Compile Include="Assets\Scripts\RestartLevel.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/denizsoysal/GitHub/FarmGame/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

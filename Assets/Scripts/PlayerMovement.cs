@@ -34,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerMoney;
     public float marketSell;
     public float marketSellWool;
-    public float repair;
+    public static float repair;
+    
 
     private float repairFence;
     public Text marketText;
@@ -68,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
         horseRent = PlayerPrefs.GetFloat("Rent", horseRent);
         sheepWool = PlayerPrefs.GetFloat("Wool", sheepWool);
         repair = PlayerPrefs.GetFloat("Repair", repair);
+        CountDownTimer.CountdownTime = PlayerPrefs.GetFloat("CountdownTime", CountDownTimer.CountdownTime);
         cam = Camera.main;
         
     }
@@ -255,43 +257,8 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(horseBrown2);
             }
             
-            /*{
-                canRentText.enabled = false;
-            }*/
-            /*{
-            StartCoroutine(DestroyFence(fence));
-            IEnumerator DestroyFence(GameObject fence)
-            {
-               
-                //Destroy fence at the beginning of the game
-                yield return new WaitForSeconds(2);
-                fence.GetComponent<MeshRenderer>().enabled = false;
-                Instantiate(fence);
+            
 
-            }
-            StartCoroutine(DestroyFence1(fence1));
-            IEnumerator DestroyFence1(GameObject fence1)
-            {
-               
-                //Destroy fence at the beginning of the game
-                yield return new WaitForSeconds(2);
-                fence1.GetComponent<MeshRenderer>().enabled = false;
-                Instantiate(fence1);
-                
-                
-            }
-            StartCoroutine(DestroyFence2(fence2));
-            IEnumerator DestroyFence2(GameObject fence2)
-            {
-               
-                //Destroy fence at the beginning of the game
-                yield return new WaitForSeconds(2);
-                fence2.GetComponent<MeshRenderer>().enabled = false;
-                Instantiate(fence2);
-                
-                
-            }
-            }*/
             if (hit.collider.tag == "Fence" && playerInFence== true)
             {
                 //check if player rent a horse before
@@ -419,7 +386,7 @@ public class PlayerMovement : MonoBehaviour
                     if (playerMoney >= 20)
                     {
                         repair += 1;
-                        playerMoney -= 20;
+                        playerMoney -= 12;
                         PlayerPrefs.SetFloat("Repair", repair);
                         PlayerPrefs.SetFloat("Money", playerMoney);
 
@@ -452,6 +419,7 @@ public class PlayerMovement : MonoBehaviour
         woolText.text = sheepWool.ToString();
         money.text = (playerMoney.ToString() + "$");
         repairToolkitAmountt.text = repair.ToString();
+        
 
 
 

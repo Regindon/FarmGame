@@ -20,9 +20,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/HorseSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TimerCountdown.cs" />
+        <option value="$PROJECT_DIR$/Assets/RestartLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CountDownTimer.cs" />
-        <option value="$PROJECT_DIR$/Assets/RestartLevel.cs" />
       </list>
     </option>
   </component>
@@ -90,6 +90,8 @@
       <workItem from="1610976540583" duration="2034000" />
       <workItem from="1610984332017" duration="2374000" />
       <workItem from="1610990092624" duration="2759000" />
+      <workItem from="1611011221011" duration="1190000" />
+      <workItem from="1611012675706" duration="1318000" />
     </task>
     <servers />
   </component>

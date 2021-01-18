@@ -15,16 +15,18 @@ public class CountDownTimer : MonoBehaviour
     void Start()
     {
         StartCoundownTimer();
+        CountdownTime = PlayerPrefs.GetFloat("CountdownTime", CountdownTime);
     }
 
     void StartCoundownTimer()
     {
-        if (timerText != null)
-        {
-            CountdownTime = 90;
-            timerText.text = "Time Left: 01:30:000";
-            InvokeRepeating("UpdateTimer", 0.0f, 0.01667f);
-        }
+         if (timerText != null)
+         {
+             CountdownTime = 90;
+             timerText.text = "Time Left: 01:30";
+             InvokeRepeating("UpdateTimer", 0.0f, 0.01667f);
+             
+         }
     }
 
     void UpdateTimer()
@@ -34,16 +36,22 @@ public class CountDownTimer : MonoBehaviour
             CountdownTime -= Time.deltaTime;
             string minutes = Mathf.Floor(CountdownTime / 60).ToString("00");
             string seconds = (CountdownTime % 60).ToString("00");
-            string fraction = ((CountdownTime * 100) % 100).ToString("000");
-            timerText.text = "Time Left: " + minutes + ":" + seconds + ":" + fraction;
-            CountdownTime = PlayerPrefs.GetFloat("CountdownTime", CountdownTime);
-            
+            timerText.text = "Time Left: " + minutes + ":" + seconds;
+            PlayerPrefs.SetFloat("CountdownTime", CountdownTime);
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                PlayerPrefs.DeleteAll();
+            }
         }
     }
 
     private void Update()
     {
-
+        // if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     PlayerPrefs.DeleteAll();
+        //     PlayerPrefs.Save();
+        // }
         if (CountdownTime <= 0 && PlayerMovement.repair == 0)
         {
             FinishGame();
@@ -52,7 +60,6 @@ public class CountDownTimer : MonoBehaviour
         {
             GameOver();
         }
-        
     }
     
     private void GameOver()

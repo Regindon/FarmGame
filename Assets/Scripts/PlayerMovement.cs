@@ -69,7 +69,6 @@ public class PlayerMovement : MonoBehaviour
         horseRent = PlayerPrefs.GetFloat("Rent", horseRent);
         sheepWool = PlayerPrefs.GetFloat("Wool", sheepWool);
         repair = PlayerPrefs.GetFloat("Repair", repair);
-        CountDownTimer.CountdownTime = PlayerPrefs.GetFloat("CountdownTime", CountDownTimer.CountdownTime);
         cam = Camera.main;
         
     }
@@ -386,7 +385,7 @@ public class PlayerMovement : MonoBehaviour
                     if (playerMoney >= 20)
                     {
                         repair += 1;
-                        playerMoney -= 12;
+                        playerMoney -= 10;
                         PlayerPrefs.SetFloat("Repair", repair);
                         PlayerPrefs.SetFloat("Money", playerMoney);
 

@@ -13112,7 +13112,7 @@ GameObject:
   - component: {fileID: 1711106736}
   - component: {fileID: 1711106735}
   m_Layer: 5
-  m_Name: CountDownText
+  m_Name: CountdownText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13176,8 +13176,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -256.1, y: -43.6}
-  m_SizeDelta: {x: 512.03723, y: 87.25232}
+  m_AnchoredPosition: {x: -207.2, y: -43.6}
+  m_SizeDelta: {x: 414.54047, y: 87.25232}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1722776093 stripped
 Transform:

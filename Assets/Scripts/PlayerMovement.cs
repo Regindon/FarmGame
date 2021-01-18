@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     public float marketSell;
     public float marketSellWool;
     public float repair;
-    
+
     private float repairFence;
     public Text marketText;
     public Text mainSceneText;
@@ -50,10 +50,13 @@ public class PlayerMovement : MonoBehaviour
     public Text marketSellWoolText;
     public Text repairToolkitAmountt;
     public Text buyRepairText;
+    public Text canRepairText;
     public GameObject horseBrown;
     public GameObject horseBrown1;
     public GameObject horseBrown2;
     public GameObject fence;
+    public GameObject fence1;
+    public GameObject fence2;
 
 
     
@@ -255,15 +258,98 @@ public class PlayerMovement : MonoBehaviour
             /*{
                 canRentText.enabled = false;
             }*/
-            //StartCoroutine(DestroyFence(fence));
-            //IEnumerator DestroyFence(GameObject fence)
+            /*{
+            StartCoroutine(DestroyFence(fence));
+            IEnumerator DestroyFence(GameObject fence)
             {
+               
                 //Destroy fence at the beginning of the game
-                //yield return new WaitForSeconds(2);
-                //fence.SetActive(false);
-                //Instantiate(fence);
-                //şimdilik commaladım çünkü hata veriyor
+                yield return new WaitForSeconds(2);
+                fence.GetComponent<MeshRenderer>().enabled = false;
+                Instantiate(fence);
+
             }
+            StartCoroutine(DestroyFence1(fence1));
+            IEnumerator DestroyFence1(GameObject fence1)
+            {
+               
+                //Destroy fence at the beginning of the game
+                yield return new WaitForSeconds(2);
+                fence1.GetComponent<MeshRenderer>().enabled = false;
+                Instantiate(fence1);
+                
+                
+            }
+            StartCoroutine(DestroyFence2(fence2));
+            IEnumerator DestroyFence2(GameObject fence2)
+            {
+               
+                //Destroy fence at the beginning of the game
+                yield return new WaitForSeconds(2);
+                fence2.GetComponent<MeshRenderer>().enabled = false;
+                Instantiate(fence2);
+                
+                
+            }
+            }*/
+            if (hit.collider.tag == "Fence" && playerInFence== true)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRepairText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    if (repair >= 1)
+                    {
+                        repair -= 1;
+                        PlayerPrefs.SetFloat("Repair", repair);
+                        fence.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                }
+                else
+                {
+                    canRepairText.enabled = false;
+                }
+            }
+            if (hit.collider.tag == "Fence" && playerInFence== true)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRepairText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    if (repair >= 1)
+                    {
+                        repair -= 1;
+                        PlayerPrefs.SetFloat("Repair", repair);
+                        fence1.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                }
+                else
+                {
+                    canRepairText.enabled = false;
+                }
+            }
+            if (hit.collider.tag == "Fence" && playerInFence== true)
+            {
+                //check if player rent a horse before
+                //activate text
+                canRepairText.enabled = true;
+                if (Input.GetKeyDown(KeyCode.R))
+                {
+                    if (repair >= 1)
+                    {
+                        repair -= 1;
+                        PlayerPrefs.SetFloat("Repair", repair);
+                        fence2.GetComponent<MeshRenderer>().enabled = true;
+                    }
+                }
+                else
+                {
+                    canRepairText.enabled = false;
+                }
+            }
+            
             
 
             if (hit.collider.tag=="Sheep" && playerInBarn==true && sheepWool <1)
@@ -329,7 +415,7 @@ public class PlayerMovement : MonoBehaviour
                 buyRepairText.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //sell milk
+                    
                     if (playerMoney >= 20)
                     {
                         repair += 1;
@@ -403,6 +489,12 @@ public class PlayerMovement : MonoBehaviour
             playerInMarket = true;
         }
 
+        if (other.CompareTag("toRepairFence"))
+        {
+            canRepairText.enabled = true;
+            playerInFence = true;
+        }
+
         
     }
 
@@ -435,6 +527,11 @@ public class PlayerMovement : MonoBehaviour
         {
             marketSellText.enabled = false;
             playerInMarket = false;
+        }
+        if (other.CompareTag("toRepairFence"))
+        {
+            canRepairText.enabled = false;
+            playerInFence = false;
         }
     }
 }

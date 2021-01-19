@@ -40,18 +40,14 @@ public class CountDownTimer : MonoBehaviour
             PlayerPrefs.SetFloat("CountdownTime", CountdownTime);
             if (Input.GetKeyDown(KeyCode.P))
             {
-                PlayerPrefs.DeleteAll();
+                CountdownTime = 90;
             }
         }
     }
 
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.P))
-        // {
-        //     PlayerPrefs.DeleteAll();
-        //     PlayerPrefs.Save();
-        // }
+        
         if (CountdownTime <= 0 && PlayerMovement.repair == 0)
         {
             FinishGame();

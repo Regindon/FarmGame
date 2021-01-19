@@ -14,7 +14,7 @@ public class CountDownTimer : MonoBehaviour
 
     void Start()
     {
-        StartCoundownTimer();
+        StartCoundownTimer(); 
         CountdownTime = PlayerPrefs.GetFloat("CountdownTime", CountdownTime);
     }
 
@@ -53,6 +53,16 @@ public class CountDownTimer : MonoBehaviour
             FinishGame();
         }
         else if (CountdownTime <=0 && PlayerMovement.repair != 0)
+        {
+            GameOver();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            FinishGame();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
         {
             GameOver();
         }

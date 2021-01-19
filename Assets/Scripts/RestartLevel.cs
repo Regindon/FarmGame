@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,8 +7,22 @@ using UnityEngine.UI;
 
 public class RestartLevel : MonoBehaviour
 {
-    public void LoadScene()
+    private void Start()
     {
-        SceneManager.LoadScene(0);
+        
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            SceneManager.LoadScene(0);
+            
+        }
+        PlayerPrefs.SetFloat("CountdownTime", CountDownTimer.CountdownTime);
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            CountDownTimer.CountdownTime = 90;
+        }
     }
 }

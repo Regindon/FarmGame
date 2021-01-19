@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class CountDownTimer : MonoBehaviour
 {
     public Text timerText;
-    public static float CountdownTime = 90;
+    public static float CountdownTime = 180;
     
     
 
@@ -22,8 +22,8 @@ public class CountDownTimer : MonoBehaviour
     {
          if (timerText != null)
          {
-             CountdownTime = 90;
-             timerText.text = "Time Left: 01:30";
+             CountdownTime = 180;
+             timerText.text = "Time Left: 03:00";
              InvokeRepeating("UpdateTimer", 0.0f, 0.01667f);
              
          }
@@ -40,7 +40,7 @@ public class CountDownTimer : MonoBehaviour
             PlayerPrefs.SetFloat("CountdownTime", CountdownTime);
             if (Input.GetKeyDown(KeyCode.P))
             {
-                CountdownTime = 90;
+                CountdownTime = 180;
             }
         }
     }

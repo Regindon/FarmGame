@@ -22,8 +22,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/TimerCountdown.cs" />
         <option value="$PROJECT_DIR$/Assets/RestartLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RestartLevel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CountDownTimer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RestartLevel.cs" />
       </list>
     </option>
   </component>
@@ -95,6 +95,8 @@
       <workItem from="1611012675706" duration="1489000" />
       <workItem from="1611014385567" duration="138000" />
       <workItem from="1611063050019" duration="1751000" />
+      <workItem from="1611072715621" duration="673000" />
+      <workItem from="1611073865544" duration="4000" />
     </task>
     <servers />
   </component>

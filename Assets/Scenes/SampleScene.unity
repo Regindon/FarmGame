@@ -770,7 +770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2293485727230622813, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2221341836222319993, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_Layer
@@ -959,6 +959,10 @@ PrefabInstance:
     - target: {fileID: 6793089976544685904, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_TagString
       value: Fence
+      objectReference: {fileID: 0}
+    - target: {fileID: 6793089976544685904, guid: 95304942206124c44b2c0630e82f917b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6877957175768372784, guid: 95304942206124c44b2c0630e82f917b, type: 3}
       propertyPath: m_IsActive
@@ -1434,7 +1438,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -10456,11 +10460,6 @@ Transform:
   m_Father: {fileID: 1419371147}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 2.4980026e-16, y: -2.5152642e-13, z: -21.189758}
---- !u!1 &1387094146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6793089976544685904, guid: 95304942206124c44b2c0630e82f917b, type: 3}
-  m_PrefabInstance: {fileID: 56882736}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1387561766
 GameObject:
   m_ObjectHideFlags: 0
@@ -20225,7 +20224,7 @@ PrefabInstance:
     - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
       propertyPath: fence2
       value: 
-      objectReference: {fileID: 1387094146}
+      objectReference: {fileID: 0}
     - target: {fileID: 6155776176922013312, guid: 77b5da6417783d64eafa913fb4d26e27, type: 3}
       propertyPath: canRepairText
       value: 

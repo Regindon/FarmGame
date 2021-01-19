@@ -22,7 +22,7 @@ public class RestartLevel : MonoBehaviour
         PlayerPrefs.SetFloat("CountdownTime", CountDownTimer.CountdownTime);
         if (Input.GetKeyDown(KeyCode.P))
         {
-            CountDownTimer.CountdownTime = 90;
+            CountDownTimer.CountdownTime = 180;
         }
     }
 }
